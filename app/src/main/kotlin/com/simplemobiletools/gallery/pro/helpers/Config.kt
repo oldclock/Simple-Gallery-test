@@ -221,7 +221,7 @@ class Config(context: Context) : BaseConfig(context) {
         set(defaultFolder) = prefs.edit().putString(DEFAULT_FOLDER, defaultFolder).apply()
 
     var allowInstantChange: Boolean
-        get() = prefs.getBoolean(ALLOW_INSTANT_CHANGE, false)
+        get() = prefs.getBoolean(ALLOW_INSTANT_CHANGE, true)
         set(allowInstantChange) = prefs.edit().putBoolean(ALLOW_INSTANT_CHANGE, allowInstantChange).apply()
 
     private fun getDirectoryColumnsField(): String {
