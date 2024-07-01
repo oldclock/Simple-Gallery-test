@@ -123,7 +123,7 @@ class MainActivity : SimpleActivity(), DirectoryOperationsListener {
 
         binding.directoriesRefreshLayout.setOnRefreshListener { getDirectories() }
         storeStateVariables()
-        checkWhatsNewDialog()
+        // checkWhatsNewDialog()
 
         mIsPasswordProtectionPending = config.isAppPasswordProtectionOn
         setupLatestMediaId()
