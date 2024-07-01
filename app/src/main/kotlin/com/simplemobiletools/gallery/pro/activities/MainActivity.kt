@@ -62,7 +62,7 @@ class MainActivity : SimpleActivity(), DirectoryOperationsListener {
     private var mWasProtectionHandled = false
     private var mShouldStopFetching = false
     private var mWasDefaultFolderChecked = false
-    private var mWasMediaManagementPromptShown = false
+    private var mWasMediaManagementPromptShown = true
     private var mWasUpgradedFromFreeShown = false
     private var mLatestMediaId = 0L
     private var mLatestMediaDateId = 0L
