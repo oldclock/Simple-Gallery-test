@@ -18,6 +18,7 @@ import android.graphics.drawable.Icon
 import android.os.Bundle
 import android.os.Handler
 import android.provider.MediaStore.Images
+import android.view.KeyEvent
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
@@ -276,6 +277,14 @@ class ViewPagerActivity : SimpleActivity(), ViewPager.OnPageChangeListener, View
             }
         }
         super.onActivityResult(requestCode, resultCode, resultData)
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        when (keyCode) {
+            KeyEvent.KEYCODE_VOLUME_DOWN -> goToNextItem()
+            KeyEvent.KEYCODE_VOLUME_UP -> goToPrevItem()
+        }
+        return true
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
