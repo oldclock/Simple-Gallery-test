@@ -284,6 +284,7 @@ class ViewPagerActivity : SimpleActivity(), ViewPager.OnPageChangeListener, View
         when (keyCode) {
             KeyEvent.KEYCODE_VOLUME_DOWN -> goToNextItem()
             KeyEvent.KEYCODE_VOLUME_UP -> goToPrevItem()
+            KeyEvent.KEYCODE_MEDIA_PLAY -> (getCurrentFragment() as? VideoFragment)!!.playVideo()
         }
         return true
     }
