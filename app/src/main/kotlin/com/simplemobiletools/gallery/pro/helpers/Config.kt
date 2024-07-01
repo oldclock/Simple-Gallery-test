@@ -452,7 +452,7 @@ class Config(context: Context) : BaseConfig(context) {
         set(showRecycleBinAtFolders) = prefs.edit().putBoolean(SHOW_RECYCLE_BIN_AT_FOLDERS, showRecycleBinAtFolders).apply()
 
     var allowZoomingImages: Boolean
-        get() = prefs.getBoolean(ALLOW_ZOOMING_IMAGES, true)
+        get() = prefs.getBoolean(ALLOW_ZOOMING_IMAGES, false)
         set(allowZoomingImages) = prefs.edit().putBoolean(ALLOW_ZOOMING_IMAGES, allowZoomingImages).apply()
 
     var lastBinCheck: Long
