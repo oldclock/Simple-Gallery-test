@@ -25,6 +25,7 @@ import android.view.WindowManager
 import android.view.animation.DecelerateInterpolator
 import android.widget.RelativeLayout
 import android.widget.Toast
+import androidx.core.view.size
 import androidx.exifinterface.media.ExifInterface
 import androidx.print.PrintHelper
 import androidx.viewpager.widget.ViewPager
@@ -1329,12 +1330,22 @@ class ViewPagerActivity : SimpleActivity(), ViewPager.OnPageChangeListener, View
     override fun isSlideShowActive() = mIsSlideshowActive
 
     override fun goToPrevItem() {
-        binding.viewPager.setCurrentItem(binding.viewPager.currentItem - 1, false)
+        if (binding.viewPager.currentItem == 0) {
+            // go to last item
+            binding.viewPager.setCurrentItem(mMediaFiles.lastIndex, false)
+        } else {
+            binding.viewPager.setCurrentItem(binding.viewPager.currentItem - 1, false)
+        }
         checkOrientation()
     }
 
     override fun goToNextItem() {
-        binding.viewPager.setCurrentItem(binding.viewPager.currentItem + 1, false)
+        if (binding.viewPager.currentItem == mMediaFiles.lastIndex) {
+            // go to first item
+            binding.viewPager.setCurrentItem(0, false)
+        } else {
+            binding.viewPager.setCurrentItem(binding.viewPager.currentItem + 1, false)
+        }
         checkOrientation()
     }
 
